@@ -16,3 +16,14 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 docker-compose version
  
+
+docker-compose up -d
+docker ps -a
+docker rm "name"
+docker stop "name"
+dokcer-compose down -v
+dokcer-compose ps
+docker exec-it cli-tools kafka-topics --list
+docker exec -it cli-tools kafka-topics --lisr --bootstrap-server broker0:29092,broker1:29093,broker3:29094
+
+
