@@ -1,3 +1,3 @@
 # TestPython
 
-Project is Designed for Building Kafka message Queue.
+Project Repository is Designed for Building Kafka message Queue.
