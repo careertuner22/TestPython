@@ -1,0 +1,71 @@
+## Step-2
+
+Topic Management via CLI:
+------------------------
+
+List Topics:
+-----------
+
+Syntax: 
+
+kafka-topics --list --bootstrap-server broker0:29092, broker1:29093, broker2:29094
+
+ANS:docker exec -it cli-tools kafka-topics --list --bootstrap-server broker0:29092
+
+Create Topics:
+-------------
+
+kafka-topics --create --bootstrap-server broker8:29092 --topic people --partitions 3 --replication-factor 3
+
+ANS: docker exec -it cli-tools kafka-topics --bootstrap-server broker0:29092 --create --topic people --partitions 2 --replication-factor 2
+
+Describe Topics:
+---------------
+
+kafka-topics --describe --bootstrap-server broker0:29092 --topic people
+
+ANS: docker exec -it cli-tools kafka-topics --describe --bootstrap-server broker0:29092 --topic people
+
+Delete Topics:
+-------------
+
+kafka-topics --delete --bootstrap-server broker0:29092 --topic people
+
+
+/////////////////////////////////////////////
+=> Start zookeeper
+
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+=> Start kafka-server
+
+bin/kafka-server-start.sh config/server.properties
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+## Creating Another TOPIC Named pets
+docker exec -it cli-tools kafka-topics --bootstrap-server broker0:29092 --create --topic pets
+
+
+Topic Management via CLI Continued :
+----------------------------------
+
+Create Topic with Different Retention:
+----------------------------------------
+kafka-topics --create --bootstrap-server broker0:29092 --topic experiments --config retention.ms=360000
+
+Change Retention of a Topic:
+---------------------------
+
+Kafka-configs --bootstrap-server broker0:29092 --alter --entity-type topics --entity-name experiments --add-config500000
+
+Create Compacted Topic:
+----------------------
+
+kafka-topics --create --bootstrap-server broker0:29092 --topic experiments. latest --config cleanup.policy=compact
+
+View Topic Configs:
+------------------
+
+kafka-configs --describe --all --bootstrap-server broker0:29092 --topic experiments 
+
+kafka-configs --describe --all --bootstrap-server broker0:29092 --topic experiments. late
