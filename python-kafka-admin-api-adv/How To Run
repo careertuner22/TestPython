@@ -1,0 +1,16 @@
+1- Install and run all the libraries and Environments from .env file in any IDE
+
+2- uvicorn main:app --reload
+
+3- INside Virtual Environement create a Project, run the main.py file on the port 8000.
+
+somelocalFolder/venv/bin/activate > $ http:8000/hello-world -b
+
+4-ls
+dokcer_compose.yml
+
+docker exec -it cli-tools kafka-topics --bootstrap-server broker0:29092 --list
+
+#to describe file inside topic:
+
+docker exec -it cli-tools kafka-topics --bootstrap-server broker0:29092 --describe --topic people.basic.python-short
