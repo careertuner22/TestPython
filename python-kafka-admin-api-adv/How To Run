@@ -13,4 +13,4 @@ docker exec -it cli-tools kafka-topics --bootstrap-server broker0:29092 --list
 
 #to describe file inside topic:
 
-docker exec -it cli-tools kafka-topics --bootstrap-server broker0:29092 --describe --topic people.basic.python-short
+docker exec -it cli-tools kafka-topics --bootstrap-server broker0:29092 --describe --topic people.basic.python
